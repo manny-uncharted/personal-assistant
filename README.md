@@ -14,8 +14,21 @@ The goal is to have multiple api endpoints for various devices.
 Currently the program runs efficiently on the local machine. 
 
 
-## To start the program just clone the program with
+## To start the program 
+1. clone the program with
 ''' git
 git clone "https://github.com/manny-uncharted/personal-assistant"
 '''
 
+2. create a .env file that contains on the required API Keys for the needed api's used. 
+"API used are below with their declarative names and the sites to get them"
+- EMAIL (Your email address ensure that you've allowed third-party access to send emails using the mail)
+- PASSWORD (Your email password)
+
+- NEWS_API_KEY (You have to sign up on https://newsapi.org/ to get your api key)
+
+- OPEN_WEATHER_APP_ID (Same goes here you sign up at https://openweathermap.org/ and get your api key)
+
+- TMDB_API_KEY (This is to get latest movie updates).
+
+There's still a lot to be done on the project to create api endpoints that ensure the program can work across multiple devices seamlessly.
