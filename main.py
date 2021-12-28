@@ -44,7 +44,7 @@ def greet_user():
 # To call the bot to attention
 def call_bot():
     speak(f" Hello {USERNAME} you called for me! How may I be of help")
-    
+
 
 # Text to speech conversion
 def speak(text):
@@ -68,7 +68,7 @@ def take_user_input():
         print('Listening....')
         r.pause_threshold = 1
         audio = r.listen(source)
-    
+
     try:
         print('Recognizing')
         query = r.recognize_google(audio, language='en-US')
@@ -85,7 +85,7 @@ def take_user_input():
         speak('Sorry, I could not understand. Could you please say that all over again')
         query = 'None'
     return query
-    
+
 """Here within the main method we initialized the greet function to greet the user
 Then we ran a loop that continously takes input from the user using the take_user_input() function"""
 if __name__ == '__main__':
@@ -101,10 +101,10 @@ if __name__ == '__main__':
 
         elif 'open calculator' in query:
             open_calculator()
-        
+
         elif 'open command prompt' in query or 'open cmd ' in query:
             open_cmd()
-        
+
         elif 'open camera' in query:
             open_camera()
 
@@ -197,4 +197,4 @@ if __name__ == '__main__':
             speak(f"Also, the weather report talks about {weather}")
             speak("For your convenience, I am printing it on the screen sir.")
 
-            
+
