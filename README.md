@@ -33,6 +33,7 @@ git clone "https://github.com/manny-uncharted/personal-assistant"
 
 There's still a lot to be done on the project to create api endpoints that ensure the program can work across multiple devices seamlessly.
 
+## Features
 Currently the assistant can interact with several online and offline functions functions such as:
 - Find my IP address
 - Search on Wikipedia
