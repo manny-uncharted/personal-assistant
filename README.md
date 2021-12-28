@@ -16,7 +16,7 @@ Currently the program runs efficiently on the local machine.
 
 ## To start the program 
 1. clone the program with
-''' git
+''' 
 git clone "https://github.com/manny-uncharted/personal-assistant"
 '''
 
