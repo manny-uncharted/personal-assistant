@@ -80,7 +80,7 @@ def get_latest_news():
 # Get weather report
 def get_weather_report(city):
     res = requests.get(
-        f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={OPENWEATHER_APP_ID}&units=metric").json()
+    f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={OPEN_WEATHER_APP_ID}&units=metric").json()    
     weather = res["weather"][0]["main"]
     temperature = res["main"]["temp"]
     feels_like = res["main"]["feels_like"]
