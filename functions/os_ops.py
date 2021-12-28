@@ -36,7 +36,7 @@ def open_calculator():
 
 def open_cmd():
     os.system('start cmd')
-    
-    
-    
-    
+
+
+
+

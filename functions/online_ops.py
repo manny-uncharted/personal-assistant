@@ -85,7 +85,7 @@ def get_weather_report(city):
     temperature = res["main"]["temp"]
     feels_like = res["main"]["feels_like"]
     return weather, f"{temperature}℃", f"{feels_like}℃"
-    
+
 # Get trending movies from the The Movie Database (TMDB)
 def get_trending_movies():
     trending_movies =[]
