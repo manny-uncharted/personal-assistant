@@ -29,6 +29,25 @@ git clone "https://github.com/manny-uncharted/personal-assistant"
 
 - OPEN_WEATHER_APP_ID (Same goes here you sign up at https://openweathermap.org/ and get your api key)
 
-- TMDB_API_KEY (This is to get latest movie updates).
+- TMDB_API_KEY (This is to get latest movie updates sign up at https://www.themoviedb.org/ and create a free account and create an api key).
 
 There's still a lot to be done on the project to create api endpoints that ensure the program can work across multiple devices seamlessly.
+
+Currently the assistant can interact with several online and offline functions functions such as:
+- Find my IP address
+- Search on Wikipedia
+- Play videos on YouTube
+- Perform search on Google
+- Send WhatsApp message (Though works with only whatsapp web for now)
+- Send Emails
+- Get Latest News Headlines
+- Get Weather Report
+- Get Trending Movies
+- Get Random Jokes
+- Get Random advice
+- Open discord (if available on the system)
+- Open notepad
+- Open slack (if installed)
+- Open Microsoft word and excel
+- Opens calculator
+- Opens Visual Studio Code
