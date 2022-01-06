@@ -1,9 +1,11 @@
-import pyttsx3
+import pyttsx3 
+import shutil
+import time
 from decouple import config
 from datetime import datetime
 import speech_recognition as sr
 from random import choice
-from utils import opening_text
+from utils import *
 
 #importing all our functions from the functions folder
 from functions.online_ops import *
@@ -11,8 +13,7 @@ from functions.os_ops import *
 from pprint import pprint
 
 
-USERNAME = config('USER')
-BOTNAME = config('ASSISTANTNAME')
+# BOTNAME = config('ASSISTANTNAME')
 
 """Initializing an engine that allows us to use sapi5 a Microsoft Speech API"""
 engine = pyttsx3.init('sapi5')
@@ -26,33 +27,46 @@ voices = engine.getProperty('voices')
 engine.setProperty('voice', voices[1].id)
 
 
+""" To set the username for the user using the assistant """
+def username():
+    speak("What should i call you sir")
+    uname = take_user_input()
+    speak("Welcome Mister")
+    speak(uname)
+    columns = shutil.get_terminal_size().columns
+
+    print("##############".center(columns))
+    print("Welcome Mr.", uname.center(columns))
+    print("##############".center(columns))
+    speak("How can i help you, Sir")
+    return uname
+
+# USERNAME = username()
 
 
 def greet_user():
     """Sends greeting message to user according to the time"""
 
+    assname = ("Lucy")
     hour = datetime.now().hour
     minute = datetime.now().minute
     if (hour >= 6) and (hour < 12):
-        speak(f"Good Morning {USERNAME}. The time is {hour} hours and {minute} minutes ")
+        speak(f"Good Morning. The time is {hour} hours and {minute} minutes ")
     elif (hour >= 12) and (hour <= 16):
-        speak(f"Good afternoon {USERNAME}. The time is {hour} hours and {minute} minutes ")
+        speak(f"Good afternoon. The time is {hour} hours and {minute} minutes ")
     elif (hour >=16) and (hour <=19):
-        speak(f"Good evening {USERNAME}. The time is {hour} hours and {minute} minutes ")
-    speak(f"I am {BOTNAME} your personal assistant. How may I assist you?")
+        speak(f"Good evening. The time is {hour} hours and {minute} minutes ")
+    speak(f"I am {assname} your personal assistant. How may I assist you?")
+    return assname
+    
 
-# To call the bot to attention
-def call_bot():
-    speak(f" Hello {USERNAME} you called for me! How may I be of help")
 
 
 # Text to speech conversion
 def speak(text):
     """Used to speak whatever text is passed to it"""
-
     engine.say(text)
     engine.runAndWait()
-
 
 # User input
 def take_user_input():
@@ -72,29 +86,36 @@ def take_user_input():
     try:
         print('Recognizing')
         query = r.recognize_google(audio, language='en-US')
-        if not 'exit' in query or 'stop' in query:
-            speak(choice(opening_text))
-        else:
-            hour = datetime.now().hour
-            if hour >= 21 and hour < 6:
-                speak("Good night sir, do take care!. {BOTNAME} is going offline now")
-            else:
-                speak('Have a good day sir!')
-            exit()
+        speak(choice(opening_text))
+
+        # if not 'exit' in query or 'stop' in query:
+        #     speak(choice(opening_text))
+        
+        # else:
+        #     hour = datetime.now().hour
+        #     if hour >= 21 and hour < 6:
+        #         speak(f"Good night sir, do take care!. {BOTNAME} is going offline now")
+        #     else:
+        #         speak('Have a good day sir!')
+        #     exit()
     except Exception:
         speak('Sorry, I could not understand. Could you please say that all over again')
-        query = 'None'
+        return 'None'
     return query
+
+def clear_existing():
+    clear = lambda: os.system('cls')
 
 """Here within the main method we initialized the greet function to greet the user
 Then we ran a loop that continously takes input from the user using the take_user_input() function"""
 if __name__ == '__main__':
+    
+    clear_existing()
+    username()
+    # USERNAME =  # Assigns the username in the function Username to a global variable USERNAME
     greet_user()
     while True:
         query = take_user_input().lower()
-
-        # if f'Hey {BOTNAME}' in query:
-        #     call_bot()
 
         if 'open notepad ' in query:
             open_notepad()
@@ -196,5 +217,15 @@ if __name__ == '__main__':
             speak(f"The current temperature is {temperature}, but it feels like {feels_like}")
             speak(f"Also, the weather report talks about {weather}")
             speak("For your convenience, I am printing it on the screen sir.")
+        
+        elif 'exit' in query:
+            speak(f"Thanks I am going offline now")
+            exit()
+        
+        # To check how the assistant is doing    
+        elif 'how are you doing today' in query:
+            speak("I guess i'm fine, Thank you")
+            speak("How are you, also doing Sir")
 
-
+        elif 'fine' in query or 'good' in query:
+            speak("It's good to know that you're fine")
