@@ -1,3 +1,4 @@
+from platform import uname
 import pyttsx3 
 import shutil
 import time
@@ -28,38 +29,37 @@ engine.setProperty('voice', voices[1].id)
 
 
 """ To set the username for the user using the assistant """
-def username():
-    speak("What should i call you sir")
-    uname = take_user_input()
-    speak("Welcome Mister")
-    speak(uname)
-    columns = shutil.get_terminal_size().columns
+class User:
+    def username(self, uname):
+        speak("What should i call you sir")
+        self.uname = take_user_input()
+        speak("Welcome Mister")
+        speak(uname)
+        columns = shutil.get_terminal_size().columns
 
-    print("##############".center(columns))
-    print("Welcome Mr.", uname.center(columns))
-    print("##############".center(columns))
-    speak("How can i help you, Sir")
-    return uname
-
-# USERNAME = username()
+        print("##############".center(columns))
+        print("Welcome Mr.", self.uname.center(columns))
+        print("##############".center(columns))
+        speak("How can i help you, Sir")
+        return uname
 
 
-def greet_user():
-    """Sends greeting message to user according to the time"""
+    def greet_user(self):
+        """Sends greeting message to user according to the time"""
 
-    assname = ("Lucy")
-    hour = datetime.now().hour
-    minute = datetime.now().minute
-    if (hour >= 6) and (hour < 12):
-        speak(f"Good Morning. The time is {hour} hours and {minute} minutes ")
-    elif (hour >= 12) and (hour <= 16):
-        speak(f"Good afternoon. The time is {hour} hours and {minute} minutes ")
-    elif (hour >=16) and (hour <=19):
-        speak(f"Good evening. The time is {hour} hours and {minute} minutes ")
-    speak(f"I am {assname} your personal assistant. How may I assist you?")
-    return assname
-    
-
+        assname = ("Lucy")
+        hour = datetime.now().hour
+        minute = datetime.now().minute
+        if (hour >= 6) and (hour < 12):
+            speak(f"Good Morning {self.uname}. The time is {hour} hours and {minute} minutes ")
+        elif (hour >= 12) and (hour <= 16):
+            speak(f"Good afternoon {self.uname}. The time is {hour} hours and {minute} minutes ")
+        elif (hour >=16) and (hour <=19):
+            speak(f"Good evening {self.uname}. The time is {hour} hours and {minute} minutes ")
+        speak(f"I am {assname} your personal assistant. How may I assist you?")
+        return assname
+        
+u = User() # calling the user class to be able to instantiate the functions in it.
 
 
 # Text to speech conversion
@@ -111,9 +111,9 @@ Then we ran a loop that continously takes input from the user using the take_use
 if __name__ == '__main__':
     
     clear_existing()
-    username()
+    u.username(uname)
     # USERNAME =  # Assigns the username in the function Username to a global variable USERNAME
-    greet_user()
+    u.greet_user()
     while True:
         query = take_user_input().lower()
 
