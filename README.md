@@ -31,11 +31,8 @@ git clone "https://github.com/manny-uncharted/personal-assistant"
 
 - TMDB_API_KEY (This is to get latest movie updates sign up at https://www.themoviedb.org/ and create a free account and create an api key).
 
-3. Declare your secret variables in the .env file
-- USER (USERNAME) 
-- ASSISTANTNAME (Name your want to call your bot)
 
-There's still a lot to be done on the project to create api endpoints that ensure the program can work across multiple devices seamlessly.
+There's still a lot to be done on the project to create useful parts of code that can be used seamlessly across multiple devices seamlessly.
 
 ## Features
 Currently the assistant can interact with several online and offline functions functions such as:
