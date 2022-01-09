@@ -58,7 +58,7 @@ class User:
             speak(f"Good evening {self.uname}. The time is {hour} hours and {minute} minutes ")
         speak(f"I am {assname} your personal assistant. How may I assist you?")
         return assname
-        
+
 u = User() # calling the user class to be able to instantiate the functions in it.
 
 
@@ -90,7 +90,7 @@ def take_user_input():
 
         # if not 'exit' in query or 'stop' in query:
         #     speak(choice(opening_text))
-        
+
         # else:
         #     hour = datetime.now().hour
         #     if hour >= 21 and hour < 6:
@@ -109,7 +109,7 @@ def clear_existing():
 """Here within the main method we initialized the greet function to greet the user
 Then we ran a loop that continously takes input from the user using the take_user_input() function"""
 if __name__ == '__main__':
-    
+
     clear_existing()
     u.username(uname)
     # USERNAME =  # Assigns the username in the function Username to a global variable USERNAME
@@ -217,11 +217,11 @@ if __name__ == '__main__':
             speak(f"The current temperature is {temperature}, but it feels like {feels_like}")
             speak(f"Also, the weather report talks about {weather}")
             speak("For your convenience, I am printing it on the screen sir.")
-        
+
         elif 'exit' in query:
             speak(f"Thanks I am going offline now")
             exit()
-        
+
         # To check how the assistant is doing    
         elif 'how are you doing today' in query:
             speak("I guess i'm fine, Thank you")
