@@ -9,7 +9,7 @@ MouseInfo==0.1.3
 packaging==21.3
 Pillow==8.4.0
 pipwin==0.5.1
-# PyAudio @ file:///C:/Users/user/pipwin/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
+PyAudio @ file:///C:/Users/user/pipwin/PyAudio-0.2.11-cp39-cp39-win_amd64.whl
 PyAutoGUI==0.9.53
 PyGetWindow==0.0.9
 pyjsparser==2.7.1
