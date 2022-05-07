@@ -22,7 +22,7 @@ EMAIL = config("EMAIL")
 PASSWORD = config("PASSWORD")
 NEWS_API_KEY = config("NEWS_API_KEY")
 OPEN_WEATHER_APP_ID = config("OPEN_WEATHER_APP_ID")
-TMDB_API_KEY = config("TMDB_API_KEY")
+# TMDB_API_KEY = config("TMDB_API_KEY")
 
 # To check my ip address
 def find_my_ip():
@@ -87,14 +87,14 @@ def get_weather_report(city):
     return weather, f"{temperature}℃", f"{feels_like}℃"
 
 # Get trending movies from the The Movie Database (TMDB)
-def get_trending_movies():
-    trending_movies =[]
-    res = requests.get(
-        f"https://api.themoviedb.org/3/trending/movie/day?api_key={TMDB_API_KEY}").json()
-    results = res["results"]
-    for r in results:
-        trending_movies.append(r["original_title"])
-    return trending_movies[:5] # return first 5 trending movies
+# def get_trending_movies():
+#     trending_movies =[]
+#     res = requests.get(
+#         f"https://api.themoviedb.org/3/trending/movie/day?api_key={TMDB_API_KEY}").json()
+#     results = res["results"]
+#     for r in results:
+#         trending_movies.append(r["original_title"])
+#     return trending_movies[:5] # return first 5 trending movies
 
 # We can't leave this out without having the bot get sone great punchline jokes. 
 """Function to get jokes from https://icanhazdadjoke.com"""

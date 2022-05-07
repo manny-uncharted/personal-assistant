@@ -87,17 +87,6 @@ def take_user_input():
         print('Recognizing')
         query = r.recognize_google(audio, language='en-US')
         speak(choice(opening_text))
-
-        # if not 'exit' in query or 'stop' in query:
-        #     speak(choice(opening_text))
-
-        # else:
-        #     hour = datetime.now().hour
-        #     if hour >= 21 and hour < 6:
-        #         speak(f"Good night sir, do take care!. {BOTNAME} is going offline now")
-        #     else:
-        #         speak('Have a good day sir!')
-        #     exit()
     except Exception:
         speak('Sorry, I could not understand. Could you please say that all over again')
         return 'None'
@@ -108,8 +97,7 @@ def clear_existing():
 
 """Here within the main method we initialized the greet function to greet the user
 Then we ran a loop that continously takes input from the user using the take_user_input() function"""
-if __name__ == '__main__':
-
+def main():
     clear_existing()
     u.username(uname)
     # USERNAME =  # Assigns the username in the function Username to a global variable USERNAME
@@ -229,3 +217,6 @@ if __name__ == '__main__':
 
         elif 'fine' in query or 'good' in query:
             speak("It's good to know that you're fine")
+
+if __name__ == '__main__':
+    main()
