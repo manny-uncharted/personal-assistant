@@ -16,9 +16,9 @@ Currently the program runs efficiently on the local machine.
 
 ## To start the program 
 1. clone the program with
-''' 
+``` 
 git clone "https://github.com/manny-uncharted/personal-assistant"
-'''
+```
 
 2. create a .env file that contains on the required API Keys for the needed api's used. 
 "API used are below with their declarative names and the sites to get them"
@@ -30,6 +30,16 @@ git clone "https://github.com/manny-uncharted/personal-assistant"
 - OPEN_WEATHER_APP_ID (Same goes here you sign up at https://openweathermap.org/ and get your api key)
 
 - TMDB_API_KEY (This is to get latest movie updates sign up at https://www.themoviedb.org/ and create a free account and create an api key).
+
+- Then install the requirements.txt
+    ``` 
+    pip install -r requirements.txt
+    ```
+
+- Then run the bot using
+    ```
+    python bot.py
+    ```
 
 
 There's still a lot to be done on the project to create useful parts of code that can be used seamlessly across multiple devices seamlessly.
@@ -53,3 +63,10 @@ Currently the assistant can interact with several online and offline functions f
 - Open Microsoft word and excel
 - Opens calculator
 - Opens Visual Studio Code
+
+
+### Implemented a tray icon
+This runs the bot in the background
+```
+python tray.py
+````
