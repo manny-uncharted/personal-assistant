@@ -1,5 +1,5 @@
 # personal-assistant
-A personal assistant package
+A personal assistant.
 
 This project is one which I decided to create one morning, after reading an article written by a friend of mine. 
 
@@ -14,27 +14,56 @@ The goal is to have multiple api endpoints for various devices.
 Currently the program runs efficiently on the local machine. 
 
 
-## To start the program 
+## Setup and Configurations
 1. clone the program with
-''' 
-git clone "https://github.com/manny-uncharted/personal-assistant"
-'''
+    ```
+    git clone "https://github.com/manny-uncharted/personal-assistant"
+    ```
+2. cd into the directory personal-assistant
+    ```
+    cd personal-assistant
+    ```
+3. create a python virtual environment
+    ```
+    mkvirtualenv personal-ass
+    ```
+4. Then after cloning the project you would be required to install the dependencies with
+    ```
+    pip install -r requirements.txt
+    ```
+    Note: on a windows machine pyaudio isn't configured to be installed directly with pip, you might need to install pyaudio with pipwin, so run the following commands
+    ```
+    pip install pipwin
+    ```
+    then after pipwin is installed
+    ```
+    pipwin install pyaudio
+    ```
 
-2. create a .env file that contains on the required API Keys for the needed api's used. 
-"API used are below with their declarative names and the sites to get them"
-- EMAIL (Your email address ensure that you've allowed third-party access to send emails using the mail)
-- PASSWORD (Your email password)
+5. create a .env file that contains on the required API Keys for the needed api's used. 
+    "API used are below with their declarative names and the sites to get them"
+    - EMAIL (Your email address ensure that you've allowed third-party access to send emails using the mail)
+    - PASSWORD (Your email password)
 
-- NEWS_API_KEY (You have to sign up on https://newsapi.org/ to get your api key)
+    - NEWS_API_KEY (You have to sign up on https://newsapi.org/ to get your api key)
 
-- OPEN_WEATHER_APP_ID (Same goes here you sign up at https://openweathermap.org/ and get your api key)
+    - OPEN_WEATHER_APP_ID (Same goes here you sign up at https://openweathermap.org/ and get your api key)
 
-- TMDB_API_KEY (This is to get latest movie updates sign up at https://www.themoviedb.org/ and create a free account and create an api key).
+    - TMDB_API_KEY (This is to get latest movie updates sign up at https://www.themoviedb.org/ and create a free account and create an api key).
 
+6. The project consists of the main application and also a tray (background process).
+    - To run the regular bot
+        ```
+        python bot.py
+        ```
+    - To run the application in the background
+        ```
+        python tray.py
+        ```
 
 There's still a lot to be done on the project to create useful parts of code that can be used seamlessly across multiple devices seamlessly.
 
-## Features
+## Available features
 Currently the assistant can interact with several online and offline functions functions such as:
 - Find my IP address
 - Search on Wikipedia
@@ -53,3 +82,5 @@ Currently the assistant can interact with several online and offline functions f
 - Open Microsoft word and excel
 - Opens calculator
 - Opens Visual Studio Code
+
+This is just a precursor to the main project I would be building in my spare time and won't be the end of it.
